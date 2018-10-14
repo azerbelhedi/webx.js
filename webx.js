@@ -1,4 +1,5 @@
 var command = require('./modules/commands/commands.js') ;
+var file = require('./modules/scratch/filesio.js') ;
 const readline = require('readline') ;
 
 console.log("----------webx.js----------");
@@ -10,9 +11,9 @@ command.runApp();
 */
 
 const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  prompt: 'webx> '
+    input: process.stdin,
+    output: process.stdout,
+    prompt: 'webx> '
 });
 
 rl.prompt();
@@ -22,6 +23,7 @@ rl.on('line', (line) => {
     // input = decomposer.deleteSpace(input) ;
     if(input == "create-app"){
         command.createApp("test app") ;
+        console.log(file.fread('azer.html'));
     }
     else if (input == "create-component"){
         command.createComponent("test component");
