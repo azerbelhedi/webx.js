@@ -1,7 +1,7 @@
 var command = require('./deletespace.js');
 
 module.exports = {
-    deletespace : function(s){
+    deleteSpace : function(s){
         return command.deleteSpace(s) ;
     }
 }

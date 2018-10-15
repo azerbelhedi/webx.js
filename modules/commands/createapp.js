@@ -1,6 +1,8 @@
 
 function testName(appName){
     // test it 
+    // only a -> z 
+    // no upper case
     return true ;
 }
 

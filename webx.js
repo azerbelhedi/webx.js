@@ -22,14 +22,16 @@ rl.prompt();
 
 rl.on('line', (line) => {
     var input = line.trim() ;
-    // input = decomposer.deleteSpace(input) ;
-    if(input == "create-app"){
-        command.createApp("test app") ;
-        //console.log(file.fread('azer.html'));
-        console.log(decomposers.deletespace("let s try and see what will happen ! ! !"));
+    input = decomposers.deleteSpace(input) ;
+    if(input.substring(0 , 10) == "create-app"){
+        var appName = input.substring(10 , input.length);
+        command.createApp(appName) ;
+        //file.mkdir("./"+appName);
+        file.fcreate("./" + appName + ".config");
     }
     else if (input == "create-component"){
         command.createComponent("test component");
+        //file.fdelete('./azer.config') ;
     }
     else if(input == "build-app"){
         command.buildApp('build app');
