@@ -27,7 +27,7 @@ rl.on('line', (line) => {
         var appName = input.substring(10 , input.length);
         command.createApp(appName) ;
         //file.mkdir("./"+appName);
-        file.fcreate("./" + appName + ".config");
+        //file.fcreate("./" + appName + ".config");
     }
     else if (input == "create-component"){
         command.createComponent("test component");
