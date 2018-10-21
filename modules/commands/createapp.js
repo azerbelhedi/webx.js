@@ -39,11 +39,7 @@ function createApp(appName){
         var indexWebxJs = file.fread('./data/index.webx.js') ;
         file.fwrite('./'+appName+'/index.webx.js',indexWebxJs) ;
         //console.log(file.fread('./'+appName+'/index.webx.js')) ;
-    
-        //var pic = file.fread('./data/logo.png') ;
-        var pic = loadImage('./data/logo.png');
-        file.fwrite('./'+appName+'/logo.png',pic) ;
-        // try loadImage
+        
         
     }
     else {
