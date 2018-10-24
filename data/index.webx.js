@@ -1,1 +1,1 @@
-var test = true ; 
+pure js

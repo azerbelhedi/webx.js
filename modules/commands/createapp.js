@@ -12,7 +12,7 @@ function createApp(appName){
         console.log("creating app ... " + appName);
         file.mkdir('./'+appName);
         file.mkdir('./'+appName+'/components');
-        file.fcreate('./'+appName+'/.stack') ;
+        file.fcreate('./'+appName+'/stack.json') ;
         
         file.fcreate('./'+appName+'/index.html');
         file.fcreate('./'+appName+'/index.css');
@@ -21,8 +21,6 @@ function createApp(appName){
         file.fcreate('./'+appName+'/index.webx.html');
         file.fcreate('./'+appName+'/index.webx.css');
         file.fcreate('./'+appName+'/index.webx.js');
-
-        file.fcreate('./'+appName+'/logo.png');
 
         file.fcreate('./'+appName+'/components/'+'webx.html');
         file.fcreate('./'+appName+'/components/'+'webx.css');
@@ -40,7 +38,29 @@ function createApp(appName){
         file.fwrite('./'+appName+'/index.webx.js',indexWebxJs) ;
         //console.log(file.fread('./'+appName+'/index.webx.js')) ;
         
-        
+        //copy webx.html
+        var webxHtml = file.fread('./data/webx.html');
+        //console.log(webxHtml) ;
+        file.fwrite('./'+appName+'/components/webx.html',webxHtml);
+
+        //copy webx.css
+        var webxCss = file.fread('./data/webx.css');
+        //console.log(webxCss) ;
+        file.fwrite('./'+appName+'/components/webx.css',webxCss);
+
+        //copy webx.js
+        var webxJs = file.fread('./data/webx.js');
+        //console.log(webxJs) ;        
+        file.fwrite('./'+appName+'/components/webx.js',webxJs);
+
+        //add webx component to stack.json
+        var components = {
+            list : []
+        };
+        components.list.push("webx");
+        var json = JSON.stringify(components);
+
+        file.fwrite('./'+appName+'/stack.json',json) ;
     }
     else {
         console.log("invalid app name ") ;
