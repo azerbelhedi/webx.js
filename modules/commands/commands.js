@@ -8,8 +8,8 @@ module.exports = {
     createApp : function(appName){
         command.createApp(appName);
     } ,
-    createComponent : function(appName){
-        command2.createComponent(appName);
+    createComponent : function(componentName , appName){
+        command2.createComponent(componentName , appName);
     } ,
     buildApp : function(){
         command3.buildApp() ;

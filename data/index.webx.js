@@ -1,1 +1,1 @@
-pure js
+// there should be some js code

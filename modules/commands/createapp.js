@@ -57,6 +57,7 @@ function createApp(appName){
         var components = {
             list : []
         };
+        components.list.push({appName : appName});
         components.list.push("webx");
         var json = JSON.stringify(components);
 
