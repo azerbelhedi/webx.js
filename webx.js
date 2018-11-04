@@ -35,13 +35,18 @@ rl.on('line', (line) => {
         //file.fdelete('./azer.config') ;
     }
     else if(input == "build-app"){
-        command.buildApp('build app');
+        command.buildApp(appName);
     }
     else if(input == "run-app"){
         command.runApp('run app');
     }
-    else if(input == "load-app"){
+    else if(input.substring(0,8) == "load-app"){
         // try to load the app
+        newAppName = command.loadapp(input.substring(8,input.length));
+        if(newAppName != undefined){
+            appName = newAppName ;
+        }
+        //console.log(appName);
     }
     else if(input == "help"){
         console.log("help");
