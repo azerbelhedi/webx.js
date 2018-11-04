@@ -54,6 +54,6 @@ rl.on('line', (line) => {
     //else if() ...
     rl.prompt();
 }).on('close', () => {
-  console.log('Have a great day!');
+  console.log('exit webxjs');
   process.exit(0);
 });
