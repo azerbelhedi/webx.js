@@ -49,7 +49,8 @@ rl.on('line', (line) => {
         //console.log(appName);
     }
     else if(input == "help"){
-        console.log("help");
+        var help = file.fread('./data/help.txt');
+        console.log(help);
     }
     //else if() ...
     rl.prompt();

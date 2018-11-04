@@ -1,0 +1,16 @@
+webxjs  documentation :
+
+create-app [appName]
+    create and init the app with all its dependencies and default files
+    
+create-component [componentName]
+    >> creates a component under the loaded app
+    
+load-app [appName]
+    >> loads the app so you can build it or run it
+
+build-app
+    >> generates the webx app (index.html , main.js and style.css) from its components
+
+run-app 
+    >> runs the loaded app in the browser (index.html file)
