@@ -38,7 +38,7 @@ rl.on('line', (line) => {
         command.buildApp(appName);
     }
     else if(input == "run-app"){
-        command.runApp('run app');
+        command.runApp(appName);
     }
     else if(input.substring(0,8) == "load-app"){
         // try to load the app

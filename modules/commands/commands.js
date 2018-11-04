@@ -15,8 +15,8 @@ module.exports = {
     buildApp : function(appName){
         command3.buildApp(appName) ;
     } ,
-    runApp : function(){
-        command4.runApp();
+    runApp : function(appName){
+        command4.runApp(appName);
     } ,
     loadapp : function(appName){
         return command5.loadApp(appName);
