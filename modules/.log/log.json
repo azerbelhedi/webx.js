@@ -1,0 +1,10 @@
+{
+	"errors" : [
+		{
+			"message" : "error message" ,
+			"date" : "error date" ,
+			"comment" : "user comment"
+		}
+	],
+	"actions" :[]
+}

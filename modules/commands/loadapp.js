@@ -3,6 +3,7 @@ var file = require('../scratch/filesio');
 function loadApp(appName){
     try{
         file.fread('./'+appName  +'/index.webx.html' );
+        file.fwrite('./config.json',appName);
     }
     catch(err){
         console.log(err.name + " : can't load app "+ appName) ;

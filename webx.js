@@ -11,12 +11,15 @@ command.buildApp();
 command.runApp();
 */
 var appName = "undefined" ;
+loadapp();
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
     prompt: '>'
 });
+
+///////////command line ////////
 
 rl.prompt();
 
@@ -58,3 +61,27 @@ rl.on('line', (line) => {
   console.log('exit webxjs');
   process.exit(0);
 });
+
+//////// end of command line //////////
+
+function loadapp(){
+    try{
+        appName = file.fread("./config.json"); // readfile
+        appName = appName.replace(/\s/g,'');
+        file.fread('./'+appName  +'/index.webx.html' );
+        if(appName != ""){
+            console.log("loadded app : '" + appName + "'");// full shows appname 
+        }else{
+            appName = "undefined" ;
+        } 
+    }
+    catch(e){
+        console.log("'config.json' file or '" + appName + "' app  missed  ");
+        try{
+            file.fread("./config.json");
+        }
+        catch(e){
+            file.fwrite("./config.json",'');
+        }
+    }
+}
