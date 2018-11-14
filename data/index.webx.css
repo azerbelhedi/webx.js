@@ -1,1 +1,12 @@
 /* pure css */
+.webx{
+	margin :10px;
+	padding :0px;
+	width :400px;
+	height :550px;
+	background-color: orange;
+}
+
+.all{
+	display :flex;
+}

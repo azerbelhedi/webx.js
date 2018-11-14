@@ -1,1 +1,11 @@
-/*webx css file*/
+.loura h1{
+	color :white;
+}
+
+.loura p{
+	color :black;
+}
+
+.loura{
+	text-align: center;
+}
