@@ -60,6 +60,7 @@ function buildApp(appName){
     }    
     //htmlCode = htmlCode.replace(/\s/g,''); 
 
+    htmlCode = htmlCode.replace("/*thisswherethecsscodeshouldbehoujoukoulouma*/",cssCode);
 
     console.log(htmlCode);
     file.fdelete('./'+appName+'/index.html');
@@ -68,7 +69,6 @@ function buildApp(appName){
     file.fdelete('./'+appName+'/index.css');
     file.fwrite('./'+appName+'/index.css',cssCode);
     
-    // build js here
 
     console.log("your main page is : "+appName+"/index.html");
 }
