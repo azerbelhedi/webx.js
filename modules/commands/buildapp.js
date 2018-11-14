@@ -14,6 +14,9 @@ function buildApp(appName){
     var position ;
     component = component.list ;
 
+    //import
+    getImports(component,htmlCode,appName);
+
     // build js
     htmlCode = buildJS(component,htmlCode,appName);
 
@@ -91,6 +94,9 @@ function buildJS(component , htmlCode,appName){
     return htmlCode
 }
 
+function getImports(component,htmlCode,appName){
+    console.log("importing");
+}
 
 module.exports = {
     buildApp : function(appName){
