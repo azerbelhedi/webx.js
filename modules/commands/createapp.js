@@ -62,6 +62,7 @@ function createApp(appName){
         var json = JSON.stringify(components);
 
         file.fwrite('./'+appName+'/stack.json',json) ;
+        file.fdelete('./config.json');
         file.fwrite('./config.json',appName);
 
     }
