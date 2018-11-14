@@ -6,13 +6,17 @@ function buildApp(appName){
     var htmlCode = file.fread("./"+appName+'/index.webx.html'); 
     var cssCode = file.fread("./"+appName+'/index.webx.css');
     var rendredComponents = "";
-    console.log(htmlCode);
+    //console.log(htmlCode);
     console.log(".................");
 
     var component = file.fread("./"+appName+"/stack.json");
     component = JSON.parse(component) ;
     var position ;
     component = component.list ;
+
+    // build js
+    htmlCode = buildJS(component,htmlCode,appName);
+
     var thereIs = true ;
     var iteration = 0;
     while(thereIs){
@@ -38,7 +42,7 @@ function buildApp(appName){
                     header+=htmlCode[start];
                     start++;
                 }
-                console.log("identifier : "+header);
+                //console.log("identifier : "+header);
             }
             
             //console.log(position);
@@ -52,8 +56,8 @@ function buildApp(appName){
                 "</div");
                 position = -1 ;
                 position = htmlCode.search("<"+component[i].toUpperCase()+header) ;
-                console.log("mara : "+position) ; mara++;
-                console.log("<"+component[i].toUpperCase()+"/"+header);
+                //console.log("mara : "+position) ; mara++;
+                //console.log("<"+component[i].toUpperCase()+"/"+header);
                 //break;
             } 
         }
@@ -62,7 +66,7 @@ function buildApp(appName){
 
     htmlCode = htmlCode.replace("/*thisswherethecsscodeshouldbehoujoukoulouma*/",cssCode);
 
-    console.log(htmlCode);
+    //console.log(htmlCode);
     file.fdelete('./'+appName+'/index.html');
     file.fwrite('./'+appName+'/index.html',htmlCode);
 
@@ -70,8 +74,23 @@ function buildApp(appName){
     file.fwrite('./'+appName+'/index.css',cssCode);
     
 
-    console.log("your main page is : "+appName+"/index.html");
+    console.log("your main page is ready at  : "+appName+"/index.html");
 }
+
+function buildJS(component , htmlCode,appName){
+    console.log(component);
+    console.log(htmlCode);
+
+    var JSCode = file.fread('./'+appName+'/index.webx.js') ;
+    for(var i = 1 ; i < component.length ; i++){
+        //console.log(component[i]);
+        JSCode += '\n' + file.fread('./'+appName+'/components/'+component[i]+'.js') ;
+    }
+    console.log("js : "+JSCode) ;
+    htmlCode = htmlCode.replace('/*thisiswherethejscodeshouldbehakalamakanabaha*/',JSCode);
+    return htmlCode
+}
+
 
 module.exports = {
     buildApp : function(appName){
