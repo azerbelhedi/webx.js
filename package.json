@@ -1,0 +1,25 @@
+{
+  "name": "webx",
+  "version": "1.0.0",
+  "description": "make web pages with components   this is program wil help you make single page simple web site , using undepended components",
+  "main": "webx.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azerbelhedi/webx.js.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azerbelhedi/webx.js/issues"
+  },
+  "homepage": "https://github.com/azerbelhedi/webx.js#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.0",
+    "shelljs": "^0.8.3"
+  }
+}
